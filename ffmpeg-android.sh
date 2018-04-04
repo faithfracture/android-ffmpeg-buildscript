@@ -112,11 +112,6 @@ buildFFmpeg()
 {
     cd $SRCDIR
 
-    # Fixup configure to use Android-friendly versioning scheme
-    #sed -i ".orig" "s/SLIBNAME_WITH_MAJOR='\$(SLIBNAME).\$(LIBMAJOR)'/SLIBNAME_WITH_MAJOR='\$(SLIBPREF)\$(FULLNAME)-\$(LIBMAJOR)\$(SLIBSUF)'/g" configure
-    #sed -i ".orig" "s/SLIB_INSTALL_NAME='\$(SLIBNAME_WITH_VERSION)'/SLIB_INSTALL_NAME='\$(SLIBNAME_WITH_MAJOR)'/g" configure
-    #sed -i ".orig" "s/SLIB_INSTALL_LINKS='\$(SLIBNAME_WITH_MAJOR) \$(SLIBNAME)'/SLIB_INSTALL_LINKS='\$(SLIBNAME)'/g" configure
-
     codecs="aac pcm_alaw pcm_mulaw adpcm_g726 adpcm_ima_wav mjpeg wmav1 wmav2 wmv1 wmv2"
     decoders="aac_fixed aac_latm adpcm_g726le h263 h264 hevc mjpegb mpeg4"
     parsers="aac h263 h264 hevc mjpeg"
